@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Prose styles for post content */
+.prose-content p { margin-bottom: 0.75rem; }
+.prose-content strong { font-weight: 600; }
+.prose-content em { font-style: italic; }
+.prose-content ul { list-style: disc; margin-left: 1.25rem; margin-bottom: 0.75rem; }
+.prose-content ol { list-style: decimal; margin-left: 1.25rem; margin-bottom: 0.75rem; }
+.prose-content li { margin-bottom: 0.25rem; }
+.prose-content h1, .prose-content h2, .prose-content h3 { font-weight: 600; margin-bottom: 0.5rem; }
+
+/* Animations */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.notification-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
